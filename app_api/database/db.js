@@ -4,7 +4,7 @@ const dbURI = `mongodb://${host}/travlr`;
 const readLine = require('readline');
 
 //avoid 'current Server Discovery and monitoring ewngine is depreciated'
-mongoose.setDriver('useUnifiedTopology', true);
+// mongoose.setDriver('useUnifiedTopology', true);
 
 const connect = () => {
     setTimeout(() => mongoose.connect(dbURI, {
