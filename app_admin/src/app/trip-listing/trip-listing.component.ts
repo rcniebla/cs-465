@@ -3,6 +3,7 @@ import { TripDataService } from '../services/trip-data.service';
 
 import { Trip } from '../models/trips';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../services/authentication';
 
 @Component({
   selector: 'app-trip-listing',
@@ -18,6 +19,7 @@ export class TripListingComponent implements OnInit {
 
   constructor(
     private tripDataService: TripDataService,
+    private authService: AuthenticationService,
     private router: Router
     ) { }
 
@@ -39,5 +41,9 @@ export class TripListingComponent implements OnInit {
 
   onDeleteEvent(event: Event){
     this.getTrips();
+  }
+
+  public isLoggedIn():boolean{
+    return this.authService.isLoggedIn();
   }
 }
